@@ -6,7 +6,7 @@ import { fetchRequest, fetchSuccess, fetchFailure } from './actions';
 // Они помогут вам написать редьюсер
 const data = handleActions(
   {
-    [handleActions]: () => [],
+    [fetchRequest]: () => [],
     [fetchSuccess]: (_state, action) => action.payload
   },
   []

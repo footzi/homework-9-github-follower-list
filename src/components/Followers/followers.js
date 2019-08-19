@@ -16,14 +16,14 @@ class Followers extends PureComponent {
     const { followers, isLoading, error } = this.props;
 
     if (isLoading) return <p>Загрузка данных о подписчиках ...</p>;
-    if (error) return <p>Произошла сетевая ошибка ...</p>;
+    if (error) return <p>{error}</p>;
     if (!followers.length)
       return <p className="t-no-followers">Нет информации о подписчиках</p>;
 
     return (
       <div className={cx(styles.root, 't-followers')}>
-        {followers.map(({ avatar_url, login }) => (
-          <div className={styles.follower}>
+        {followers.map(({ id, avatar_url, login }) => (
+          <div key={id} className={styles.follower}>
             <img className={styles.followerImg} src={avatar_url} alt={login} />
             <p className={styles.followerLogin}>{login} </p>
           </div>

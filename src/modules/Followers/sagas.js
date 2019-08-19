@@ -16,8 +16,8 @@ export function* fetchFollowersFlow(action) {
   try {
     const result = yield call(getFollowersInfo, apiKey, user);
     yield put(fetchSuccess(result));
-  } catch (error) {
-    yield put(fetchFailure(error));
+  } catch ({ message }) {
+    yield put(fetchFailure(message));
   }
 }
 
