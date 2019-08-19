@@ -12,7 +12,7 @@ class Login extends PureComponent {
     key: ''
   };
 
-  input = React.createRef();
+  input = React.createRef();         
 
   handleChange = event => {
     this.setState({ key: event.target.value });
